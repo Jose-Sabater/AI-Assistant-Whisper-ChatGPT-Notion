@@ -4,8 +4,9 @@ import torch
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-audio_file = "./audio_files/test_video.mp3"
-filename = "test_audio"
+# audio_file = "./audio_files/test_video.mp3"
+audio_file = "./audio_files/data_utilization.mp3"
+filename = "data_utilization"
 
 model_size = "small.en"
 
@@ -35,7 +36,7 @@ print(audio.shape)
 
 result = model.transcribe(audio_file)
 
-with open(f"./transcripts/{filename}.txt", "w", encoding='utf-8') as f:
+with open(f"./transcripts/{filename}.txt", "w", encoding="utf-8") as f:
     f.write(result["text"])
 
 print(result["text"])

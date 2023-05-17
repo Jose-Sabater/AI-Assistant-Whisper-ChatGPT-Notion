@@ -1,0 +1,50 @@
+{
+    "title": "Using Data in Skanje",
+    "summary": "The discussion revolves around the recruitment of three automation engineers at the battery factory in Skanje, who will work with data. The conversation touches on the different competencies required for working with data, such as collecting, transforming, and analyzing data. The group also discusses the importance of understanding what data to use and how to use it.",
+    "main_points": [
+        "Three automation engineers will be hired at the battery factory in Skanje to work with data.",
+        "Different competencies are required for working with data, such as collecting, transforming, and analyzing data.",
+        "Understanding what data to use and how to use it is important.",
+        "Data becomes valuable when it is used.",
+        "The battery factory is looking at the data they have and trying to find out what they can do with it.",
+        "There are different roles involved in working with data, such as data engineers and analysts.",
+        "Data needs to be collected in a good format and quality to provide value.",
+        "Data can be used to diagnose equipment, build dashboards, and predict future outcomes.",
+        "It is difficult for one person to have all the competencies required for working with data.",
+        "There are two ways to work with data: having a recipe and knowing what ingredients to use, or looking at what ingredients are available and building from there."
+    ],
+    "action_items": [
+        "Identify what the three automation engineers will work with.",
+        "Ensure data is collected in a good format and quality.",
+        "Determine what data to use and how to use it.",
+        "Identify the different competencies required for working with data.",
+        "Consider hiring people with different competencies to work with data."
+    ],
+    "follow_up": [
+        "How can we ensure that the data collected is used effectively?",
+        "What are some examples of how data has been used in other units in Skanje?",
+        "How can we encourage more people to develop competencies in working with data?",
+        "What are some potential challenges in working with data?",
+        "How can we measure the impact of using data?"
+    ],
+    "stories": [
+        "The group discusses the different competencies required for working with data, such as collecting, transforming, and analyzing data. They note that it is difficult for one person to have all the competencies and that it is more common for people to specialize in one area. For example, some people may be good at maintaining databases and making data available, while others may be good at analytics and predicting future outcomes.",
+        "The group talks about the importance of understanding what data to use and how to use it. They note that there are two ways to work with data: having a recipe and knowing what ingredients to use, or looking at what ingredients are available and building from there. They also discuss the battery factory's approach of looking at the data they have and trying to find out what they can do with it.",
+        "The group discusses the different roles involved in working with data, such as data engineers and analysts. They note that data engineers help move and transform data, while analysts try to understand the data and predict future outcomes. They also discuss the importance of collecting data in a good format and quality to provide value.",
+        "The group talks about the challenges of working with data and notes that it is important to have people with different competencies working together. They also discuss the potential impact of using data, such as being able to diagnose equipment and predict future outcomes.",
+        "The group discusses the recruitment of three automation engineers at the battery factory in Skanje to work with data. They note that the competence about data will lie within these engineers and that they are trying to figure out what they will work with. They also discuss the importance of understanding what data to use and how to use it."
+    ],
+    "arguments": [
+        "Some people may argue that it is better to have one person with all the competencies required for working with data, rather than having multiple people specialize in different areas.",
+        "Others may argue that it is better to have a clear plan for what data to use and how to use it, rather than looking at what data is available and building from there.",
+        "Some may argue that collecting data in a good format and quality is not as important as having a lot of data.",
+        "Others may argue that the battery factory's approach of looking at the data they have and trying to find out what they can do with it is not the most efficient way to work with data.",
+        "Some may argue that the recruitment of three automation engineers at the battery factory in Skanje to work with data is not enough and that more people with data competencies are needed."
+    ],
+    "related_topics": [
+        "Data collection",
+        "Data transformation",
+        "Data analysis"
+    ],
+    "sentiment": "neutral"
+}
