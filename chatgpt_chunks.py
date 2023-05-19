@@ -1,16 +1,18 @@
+"""
+This script uses the OpenAI API to generate a summary of a transcript.
+Used for transcripts larger than 1500-2000 tokens, which is the limit of the GTP-3 API.
+"""
 import openai
 from config import settings
 import pandas as pd
 import tiktoken
-from tiktoken import Tokenizer
+
 
 openai.organization = settings.openai_organization
 openai.api_key = settings.openai_api_key
 
-model = "gpt-3.5-turbo-0301"
 
-
-def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0301"):
+def num_tokens_from_messages(messages: str, model: str = "gpt-3.5-turbo-0301") -> int:
     """Returns the number of tokens used by a list of messages."""
     try:
         encoding = tiktoken.encoding_for_model(model)
@@ -35,62 +37,115 @@ def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0301"):
         )
 
 
-transcript_path = "./transcripts/data_utilization.txt"
-
-
-def read_transcript(transcript_path):
+def read_transcript(transcript_path: str) -> str:
     with open(transcript_path, "r", encoding="utf-8") as f:
         return f.read()
 
 
-def split_transcript(transcript, max_tokens):
-    tokenizer = Tokenizer()
-    tokens = tokenizer.tokenize(transcript)
+def split_transcript(transcript: str, max_tokens: int) -> list[str]:
+    words = transcript.split(" ")
     chunks = []
-    current_chunk = ""
+    current_chunk = []
     current_tokens = 0
-    for token in tokens:
-        if current_tokens + len(token) > max_tokens:
-            chunks.append(current_chunk)
-            current_chunk = ""
+    for word in words:
+        if current_tokens + len(word.split(" ")) > max_tokens:
+            chunks.append(" ".join(current_chunk))
+            current_chunk = []
             current_tokens = 0
-        current_chunk += token
-        current_tokens += len(token)
+        current_chunk.append(word)
+        current_tokens += len(word.split(" "))
     if current_chunk:  # Add the last chunk if it's not empty
-        chunks.append(current_chunk)
+        chunks.append(" ".join(current_chunk))
     return chunks
 
 
-transcript = read_transcript(transcript_path)
-chunks = split_transcript(
-    transcript, 2000
-)  # Adjust the token limit based on your messages
-
-responses = []
-for chunk in chunks:
-    prompt = f"""Analyze the transcript provided below, then provide the following:
-    #... your prompt here ...
-
-    Transcript:
-
-    {chunk}"""
-
-    messages = [
-        # ... your messages here ...
-        {
-            "role": "user",
-            "content": prompt,
-        },
-        # ... your system message here ...
-    ]
-
-    response = openai.ChatCompletion.create(
-        model=model, messages=messages, max_tokens=1000, temperature=0.2
+def summarize(
+    transcript_path: str, model: str = "gpt-3.5-turbo-0301", save_summary: bool = True
+) -> None:
+    print(f"Using model {model}.")
+    transcript = read_transcript(transcript_path)
+    print(
+        f"The model is these {num_tokens_from_messages(transcript, model)} tokens long."
     )
-    ai_output = response["choices"][0]["message"]["content"]
-    responses.append(ai_output)
+    chunks = split_transcript(
+        transcript, 1500
+    )  # Adjust the token limit based on your messages
 
-# save it to a file
-with open("./data_utilization.json", "w") as f:
-    for response in responses:
-        f.write(response + "\n")
+    responses = []
+    for chunk in chunks:
+        prompt = f"""Analyze the transcript provided below, then provide the following:
+        Key "title:" - add a title.
+        Key "summary" - create a summary.
+        Key "main_points" - add an array of the main points. Limit each item to 80 words, and limit the list to 10 items.
+        Key "action_items:" - add an array of action items. Limit each item to 50 words, and limit the list to 5 items.
+        Key "follow_up:" - add an array of follow-up questions. Limit each item to 80 words, and limit the list to 5 items.
+        Key "stories:" - add an array of an stories, examples, or cited works found in the transcript. Limit each item to 1050 words, and limit the list to 5 items.
+        Key "arguments:" - add an array of potential arguments against the transcript. Limit each item to 50 words, and limit the list to 5 items.
+        Key "related_topics:" - add an array of topics related to the transcript. Limit each item to 50 words, and limit the list to 5 items.
+        Key "sentiment" - add a sentiment analysis
+
+        Ensure that the final element of any array within the JSON object is not followed by a comma.
+
+        Transcript:
+
+        {chunk}"""
+
+        messages = [
+            {
+                "role": "user",
+                "content": prompt,
+            },
+            {
+                "role": "system",
+                "content": """You are an assistant that only speaks JSON. Do not write normal text.
+
+        Example formatting:
+
+        {
+            "title": "Notion Buttons",
+            "summary": "A collection of buttons for Notion",
+            "action_items": [
+                "item 1",
+                "item 2",
+                "item 3"
+            ],
+            "follow_up": [
+                "item 1",
+                "item 2",
+                "item 3"
+            ],
+            "arguments": [
+                "item 1",
+                "item 2",
+                "item 3"
+            ],
+            "related_topics": [
+                "item 1",
+                "item 2",
+                "item 3"
+            ]
+            "sentiment": "positive"
+        }
+        """,
+            },
+        ]
+
+        response = openai.ChatCompletion.create(
+            model=model, messages=messages, max_tokens=1000, temperature=0.2
+        )
+        ai_output = response["choices"][0]["message"]["content"]
+        responses.append(ai_output)
+
+    # save it to a file
+    if save_summary == True:
+        with open("./data_utilization.json", "w") as f:
+            for response in responses:
+                f.write(response + "\n")
+
+    return responses
+
+
+if __name__ == "__main__":
+    model = "gpt-3.5-turbo-0301"
+    transcript_path = "./transcripts/data_utilization.txt"
+    summarize(transcript_path, model, save_summary=True)

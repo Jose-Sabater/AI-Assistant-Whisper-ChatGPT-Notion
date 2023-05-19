@@ -1,3 +1,7 @@
+"""
+This script uses the OpenAI API to generate a summary of a transcript.
+Used for transcripts smaller than 1500-2000 tokens, which is the limit of the GTP-3 API.
+"""
 import openai
 from config import settings
 import pandas as pd

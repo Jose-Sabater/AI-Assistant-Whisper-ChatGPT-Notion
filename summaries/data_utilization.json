@@ -1,0 +1,284 @@
+{
+    "title": "Using Data to Drive Automation",
+    "summary": "The speakers discuss the challenges of using data to drive automation and how to spread knowledge of data usage across different units. They mention the importance of hiring automation engineers with data competence and the different competencies involved in working with data. They also discuss the two ways of working with data, either starting with a recipe or starting with the available ingredients.",
+    "main_points": [
+        "Hiring automation engineers with data competence is important.",
+        "Working with data involves different competencies, including collecting, transforming, and analyzing data.",
+        "There are two ways of working with data: starting with a recipe or starting with the available ingredients.",
+        "The battery factory is currently working backwards by hiring a person before knowing what they will do with the data.",
+        "Learning from other units and spreading knowledge of data usage is a challenge.",
+        "Small cases or projects can help build knowledge and experience with data usage.",
+        "Dashboards and connecting devices can help with data collection and analysis.",
+        "Predictive analytics and machine learning are the next steps after analytics.",
+        "Data becomes valuable when it is used.",
+        "Data can be used to understand equipment diagnostics, build dashboards, and predict future outcomes."
+    ],
+    "action_items": [
+        "Identify the competencies needed for working with data and hire accordingly.",
+        "Consider starting with a recipe when working with data.",
+        "Encourage small cases or projects to build knowledge and experience with data usage.",
+        "Explore the use of dashboards and connecting devices for data collection and analysis.",
+        "Consider the next steps after analytics, such as predictive analytics and machine learning."
+    ],
+    "follow_up": [
+        "How can knowledge of data usage be spread across different units?",
+        "What are some best practices for working with data?",
+        "How can data be used to drive automation in other areas of the company?",
+        "What are some potential challenges in working with data?",
+        "How can data be used to improve efficiency and productivity?"
+    ],
+    "stories": [
+        "The speakers mention a project they are working on to support M-A in the battery factory, where they are trying to identify what automation engineers will work with. This highlights the importance of hiring automation engineers with data competence and the challenges of working with data in a backwards manner.",
+        "The speakers also mention small cases or projects they have worked on to help customers understand their data and extract valuable information from it. This highlights the importance of building knowledge and experience with data usage through practical applications.",
+        "The speakers discuss the different competencies involved in working with data, including collecting, transforming, and analyzing data. They also mention the importance of understanding what data should be used for and how it can be used to drive automation.",
+        "The speakers discuss the two ways of working with data, either starting with a recipe or starting with the available ingredients. They mention that the battery factory is currently working backwards by hiring a person before knowing what they will do with the data.",
+        "The speakers discuss the challenges of spreading knowledge of data usage across different units and mention the importance of learning from other units and exploring the use of dashboards and connecting devices for data collection and analysis."
+    ],
+    "arguments": [
+        "Working with data can be complex and requires different competencies, which may be difficult to find in one person.",
+        "Starting with the available ingredients when working with data may lead to a lack of direction and purpose.",
+        "Small cases or projects may not provide enough experience or knowledge to effectively work with data on a larger scale.",
+        "Dashboards and connecting devices may not be suitable for all types of data or equipment.",
+        "Predictive analytics and machine learning may not always be necessary or feasible for all types of data or equipment."
+    ],
+    "related_topics": [
+        "Data analysis",
+        "Automation",
+        "Internet of Things",
+        "Machine learning",
+        "Efficiency"
+    ],
+    "sentiment": "neutral"
+}
+{
+    "title": "Data Driven Production Line",
+    "summary": "The Data Driven Production Line project aims to improve collaboration and data transfer among stakeholders in production lines. The project identified four categories of interest: digital productivity, competency in data, data-driven culture, and line health. The project is currently working on three cases and will showcase a line mapping to help units build a roadmap on what to tackle next.",
+    "main_points": [
+        "The Data Driven Production Line project aims to improve collaboration and data transfer among stakeholders in production lines.",
+        "The project identified four categories of interest: digital productivity, competency in data, data-driven culture, and line health.",
+        "The project is currently working on three cases: AGVs stop time analysis, RGVs data collection, and silicone drying stop time optimization.",
+        "The project will showcase a line mapping to help units build a roadmap on what to tackle next.",
+        "The project is not concerned about the system used to store data.",
+        "The project encourages ownership and decision-making among stakeholders.",
+        "The project aims to promote data analytics competence among stakeholders.",
+        "The project aims to build a culture of data among stakeholders.",
+        "The project aims to improve line health through data-driven approaches.",
+        "The project aims to generalize results that can be copy-pasted to different units or production lines."
+    ],
+    "action_items": [
+        "Promote data analytics competence among stakeholders.",
+        "Build a culture of data among stakeholders.",
+        "Improve line health through data-driven approaches.",
+        "Generalize results that can be copy-pasted to different units or production lines.",
+        "Showcase a line mapping to help units build a roadmap on what to tackle next."
+    ],
+    "follow_up": [
+        "What specific problems or cases are being tackled in the three cases?",
+        "How will the line mapping be done?",
+        "How will the project promote ownership and decision-making among stakeholders?",
+        "How will the project promote data analytics competence among stakeholders?",
+        "How will the project build a culture of data among stakeholders?"
+    ],
+    "stories": [
+        "The Data Driven Production Line project is a great example of how data can be used to improve collaboration and efficiency in production lines. By identifying four categories of interest and working on specific cases, the project aims to build a culture of data among stakeholders and generalize results that can be copy-pasted to different units or production lines.",
+        "The project's focus on promoting data analytics competence among stakeholders is particularly noteworthy. By encouraging stakeholders to attend courses and learn new skills, the project is helping to build a more data-savvy workforce that can tackle complex problems and make better decisions.",
+        "The project's approach to improving line health through data-driven approaches is also interesting. By collecting and visualizing data, stakeholders can identify specific problems and work on solutions that are tailored to their needs. This approach can help to reduce downtime and improve overall efficiency in production lines.",
+        "The project's emphasis on ownership and decision-making among stakeholders is also commendable. By giving stakeholders the power to decide what is important to work on, the project is promoting a more collaborative and inclusive approach to problem-solving.",
+        "Overall, the Data Driven Production Line project is a great example of how data can be used to drive innovation and improve efficiency in production lines. By building a culture of data and promoting data analytics competence among stakeholders, the project is helping to create a more data-driven workforce that can tackle complex problems and drive growth."
+    ],
+    "arguments": [
+        "The project's focus on data-driven approaches may not be suitable for all production lines, especially those that do not have access to advanced data analytics tools.",
+        "The project's emphasis on ownership and decision-making among stakeholders may lead to conflicts and disagreements among team members.",
+        "The project's approach to promoting data analytics competence among stakeholders may be costly and time-consuming.",
+        "The project's focus on building a culture of data may not be feasible in all production lines, especially those that do not have a strong data-driven culture.",
+        "The project's approach to generalizing results may not be suitable for all production lines, especially those that have unique challenges and requirements."
+    ],
+    "related_topics": [
+        "Data-driven decision making",
+        "Collaboration in the workplace",
+        "Efficiency in production lines",
+        "Data analytics",
+        "Digital transformation"
+    ],
+    "sentiment": "positive"
+}
+{
+    "title": "Building a Data-Driven Culture in Production and Logistics",
+    "summary": "The transcript discusses the challenges of handling data in production and logistics, and the need to build a data-driven culture. The speakers emphasize the importance of exploring data as a unit and handling it in general, while also acknowledging the need for case-based solutions. They suggest that building a data-driven culture requires early adoption, tools, and competence to use them, as well as a network of like-minded people to turn to for support.",
+    "main_points": [
+        "Exploring data as a unit and handling it in general is important for building a data-driven culture.",
+        "Case-based solutions are also necessary for specific processes or stations.",
+        "Building a data-driven culture requires early adoption, tools, and competence to use them.",
+        "A network of like-minded people can provide support for those starting to work with data in production and logistics.",
+        "Data collection is not enough; it is important to work with the data to find defects and improve quality.",
+        "Domain knowledge is important for identifying what data to collect and how to use it.",
+        "Methods for handling data can be generalized, but specific processes or stations may require case-based solutions.",
+        "Tools such as Excel, Python, and data science libraries can support data analysis.",
+        "Workshops and hands-on training can help build awareness and competence in working with data.",
+        "Creating a network of people working with data in production and logistics can provide support and foster a data-driven culture."
+    ],
+    "action_items": [
+        "Organize workshops and hands-on training to build awareness and competence in working with data.",
+        "Create a network of people working with data in production and logistics to provide support and foster a data-driven culture.",
+        "Encourage early adoption of data-driven practices.",
+        "Provide tools and competence to use them for data analysis.",
+        "Encourage a culture of working with data to find defects and improve quality."
+    ],
+    "follow_up": [
+        "How can we ensure that case-based solutions are effective and efficient?",
+        "What are some best practices for identifying what data to collect and how to use it?",
+        "How can we encourage more people to adopt data-driven practices?",
+        "What are some potential challenges in building a network of people working with data in production and logistics?",
+        "How can we measure the success of building a data-driven culture?"
+    ],
+    "stories": [
+        "The speaker shares their experience of looking at data and finding issues that improved quality, but notes that this is not being done today despite having the tools. They emphasize the need to work with data to find defects and improve quality.",
+        "The speakers discuss the importance of domain knowledge in identifying what data to collect and how to use it. They note that the value of data often comes from people with domain knowledge, such as those working on the line or specialists in a particular station.",
+        "The speakers discuss the challenges of building a data-driven culture, including the need for early adoption, tools, competence, and a network of like-minded people. They suggest that workshops and hands-on training can help build awareness and competence, while a network can provide support and foster a data-driven culture.",
+        "The speakers note that data collection is not enough, and that it is important to work with the data to find defects and improve quality. They give examples of data being collected but not used, such as torque values and leakage tests.",
+        "The speakers discuss the potential for generalizing methods for handling data, but note that specific processes or stations may require case-based solutions. They suggest that tools such as Excel, Python, and data science libraries can support data analysis."
+    ],
+    "arguments": [
+        "Building a data-driven culture may be difficult to implement in practice.",
+        "Case-based solutions may not be efficient or effective in all cases.",
+        "Identifying what data to collect and how to use it may be challenging without domain knowledge.",
+        "Tools such as Excel, Python, and data science libraries may not be accessible or user-friendly for all employees.",
+        "Creating a network of people working with data in production and logistics may not be feasible or effective in all organizations."
+    ],
+    "related_topics": [
+        "Data analysis",
+        "Quality improvement",
+        "Process optimization",
+        "Industry 4.0",
+        "Digital transformation"
+    ],
+    "sentiment": "neutral"
+}
+{
+    "title": "Data Workshops and Network",
+    "summary": "The speaker discusses a network between M.A.D.T.M. and three different periods they are working with data. They talk about how to collect, analyze, and visualize data for production. They mention workshops that will be held for each unit to teach them how to use tools and analyze data. The goal is to lift awareness for the specific needs of each unit and to create common methods for collecting, maintaining, and analyzing data.",
+    "main_points": [
+        "Network between M.A.D.T.M. and three different periods working with data",
+        "Workshops will be held for each unit to teach them how to use tools and analyze data",
+        "Goal is to lift awareness for the specific needs of each unit",
+        "Create common methods for collecting, maintaining, and analyzing data"
+    ],
+    "action_items": [
+        "Hold workshops for each unit to teach them how to use tools and analyze data",
+        "Create common methods for collecting, maintaining, and analyzing data",
+        "Assist workers in building up competence",
+        "Showcase good examples of the value of data",
+        "Work on improving tools to better support data needs"
+    ],
+    "follow_up": [
+        "What specific tools will be used in the workshops?",
+        "How will the success of the workshops be measured?",
+        "Will there be ongoing support for units after the workshops?",
+        "How will the common methods for collecting, maintaining, and analyzing data be developed?",
+        "What is the timeline for implementing these changes?"
+    ],
+    "stories": [
+        "The speaker mentions a project they are working on to build a machine learning algorithm to propose a thickness for a certain part. This is an example of an extra step beyond just collecting data.",
+        "The speaker talks about using data from the sinking of the Titanic and weather in Scandinavia to teach workers how to handle data, regardless of where it comes from.",
+        "The speaker mentions that many units have built dashboards, but they need to go beyond just looking at the data and create action triggers to make things happen based on certain levels of data.",
+        "The speaker discusses the need to invest in competence for workers and for leaders to see the value in data so they can invest the correct resources.",
+        "The speaker emphasizes that it is a lot of small things coming together, including building up competence, showcasing good examples, and improving tools to better support data needs."
+    ],
+    "arguments": [
+        "Some units may not see the value in data and may not be interested in attending the workshops.",
+        "Creating common methods for collecting, maintaining, and analyzing data may not work for all units as they have their own small government and may prefer to do things their own way.",
+        "It may be difficult to measure the success of the workshops and the impact they have on each unit's use of data."
+    ],
+    "related_topics": [
+        "Data analysis",
+        "Machine learning",
+        "Data visualization",
+        "Data collection",
+        "Data maintenance"
+    ],
+    "sentiment": "positive"
+}
+{
+    "title": "Data Production and Analysis at Scarnia",
+    "summary": "The discussion revolves around the importance of data analysis and production in Scarnia. They talk about the need to connect with other units and learn from them, and the importance of finding the right employees with the correct competence. The team discusses the value of data analysis and how it must bring back some money to the production. They also talk about the democratic process of managing the data team and the importance of having a clear business case and value return behind any reasoning.",
+    "main_points": [
+        "Importance of connecting with other units and learning from them",
+        "Need to find the right employees with the correct competence",
+        "Value of data analysis and its importance in bringing back money to production",
+        "Democratic process of managing the data team",
+        "Importance of having a clear business case and value return behind any reasoning"
+    ],
+    "action_items": [
+        "Create more connections with other units and learn from them",
+        "Find the right employees with the correct competence",
+        "Ensure that data analysis brings back money to production",
+        "Continue with the democratic process of managing the data team",
+        "Ensure that there is a clear business case and value return behind any reasoning"
+    ],
+    "follow_up": [
+        "When will the follow-up meeting be scheduled?",
+        "What are the results of the transcription and summary project?",
+        "How can the team continue to improve their data analysis and production?",
+        "What are the next steps for the team?",
+        "How can the team attract new talent for Scarnia?"
+    ],
+    "stories": [
+        "The team discusses the importance of connecting with other units and learning from them. They mention the data production lab in Munich, which has 120 data scientists sitting in a building there doing things. They talk about how there is a lot of talent distributed through Volkswagen and how it is nice to learn from others how they are doing it and maybe even via lighthouse. They mention that Scarnia can even be the leaders in some area and pave the way.",
+        "The team talks about the importance of finding the right employees with the correct competence. They mention that the area of data analyst automation engineer and data scientist machine learning is very hot topics and very attractive for people coming out of university or people in the early years of their careers. They mention that it is a very nice way to attract new talent for Scarnia.",
+        "The team discusses the democratic process of managing the data team. They mention that there is no one really leading it and everyone is doing their own things. They mention that it is mostly the speaker and another person working full time because the other two are part-time. They mention that they do weekly follow-ups and monthly sprint planning based on what the operations team in this more factory thinks is important.",
+        "The team talks about the importance of having a clear business case and value return behind any reasoning. They mention that it is not about building a dashboard for just building a dashboard, but it is about preventing stops or increasing quality. They mention that it is very important that they always have this behind any reasoning they do.",
+        "The team discusses the importance of data analysis and its importance in bringing back money to production. They mention that it must bring back some money and that it is all about getting better productivity in the production. They mention that it is fun with data, but the question of what is the value has to be there all the time."
+    ],
+    "arguments": [
+        "Data analysis may not always bring back money to production",
+        "Finding the right employees with the correct competence may be difficult",
+        "The democratic process of managing the data team may not be effective",
+        "Having a clear business case and value return may not always be possible",
+        "Data analysis may not always be fun"
+    ],
+    "related_topics": [
+        "Data analysis",
+        "Data production",
+        "Employee competence",
+        "Business case",
+        "Productivity"
+    ],
+    "sentiment": "positive"
+}
+{
+    "title": "Meeting Notes",
+    "summary": "A brief discussion on the progress of a project and plans for testing",
+    "main_points": [
+        "The chat GPT API has a maximum of 2000 words that can go in",
+        "The speaker plans to take the first half of the transcript to stay within the limit",
+        "Access to the video is needed to proceed with testing",
+        "Components are ready and will be tested before being run together",
+        "The goal is to use Notion as a notebook to store the results",
+        "The speaker will demonstrate how the notebook looks later",
+        "The meeting has ended"
+    ],
+    "action_items": [
+        "Give the speaker access to download the video",
+        "Send the video to the speaker later today",
+        "Test the components before running them together",
+        "Drag the file to the notebook to store the results",
+        "Ask the speaker to demonstrate how the notebook looks"
+    ],
+    "follow_up": [
+        "What is the project that the speaker is working on?",
+        "What are the components that are being tested?",
+        "How will the results be used?",
+        "What are the benefits of using Notion as a notebook?",
+        "When is the next meeting scheduled?"
+    ],
+    "stories": [],
+    "arguments": [],
+    "related_topics": [
+        "Project management",
+        "APIs",
+        "Note-taking",
+        "Testing",
+        "Collaboration"
+    ],
+    "sentiment": "neutral"
+}
