@@ -41,20 +41,12 @@ def transcribe_audio(
         model = whisper.load_model(selected_model)
 
         logging.info(
-            f"""Model is {model.is_multilingual} and has
+            f"""Model is multiligual {model.is_multilingual} and has
         {sum(np.prod(p.shape) for p in model.parameters()):,} parameters."""
         )
 
     except Exception as e:
         logging.error(f"An error occurred while loading the model: {str(e)}")
-        raise TranscriptionError(str(e))
-
-    try:
-        audio = whisper.load_audio(audio_file)
-        print(f"Audio is {audio.duration:.1f} seconds long.")
-
-    except Exception as e:
-        logging.error(f"An error occurred while loading the audio: {str(e)}")
         raise TranscriptionError(str(e))
 
     try:
@@ -70,10 +62,13 @@ def transcribe_audio(
 
     transcript = f"{transcript_path}/{filename}.txt"
 
+    logging.info(f"Transcription succesful")
+
     if save_transcript:
         try:
             with open(transcript, "w", encoding="utf-8") as f:
                 f.write(result["text"])
+            logging.info(f"Transcript saved to {transcript}")
         except Exception as e:
             logging.error(f"An error occurred while saving the transcript: {str(e)}")
             raise TranscriptionError(str(e))

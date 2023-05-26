@@ -13,6 +13,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+class SummarizationError(Exception):
+    """Raised when a transcript cannot be summarized."""
+
+    pass
+
+
 openai.organization = settings.openai_organization
 openai.api_key = settings.openai_api_key
 
@@ -70,7 +76,7 @@ def summarize(
     transcript_path: str, model: str = "gpt-3.5-turbo-0301", save_summary: bool = True
 ) -> str:
     """Summarizes a transcript using the OpenAI API. Returns the summary as a string.
-    
+
     Args:
         transcript_path (str): The path to the transcript file.
         model (str, optional): The model to use. Defaults to "gpt-3.5-turbo-0301".
@@ -79,16 +85,22 @@ def summarize(
     Returns:
         path (str): The path to the summary file.
 
-    
+
     """
     transcript = read_transcript(transcript_path)
     filename, _ = os.path.splitext(os.path.basename(transcript_path))
     logging.info(f"Using model {model}. the file {filename}")
-    logging.info(f"The model is these {num_tokens_from_messages(transcript, model)} tokens long.")
-    
-    chunks = split_transcript(
-        transcript, 1500
-    )  # Adjust the token limit based on your messages
+    logging.info(
+        f"The model is these {num_tokens_from_messages(transcript, model)} tokens long."
+    )
+    try:
+        chunks = split_transcript(
+            transcript, 1500
+        )  # Adjust the token limit based on your messages
+    except Exception as e:
+        raise SummarizationError(
+            f"Could not split transcript into chunks. Error: {e}"
+        ) from e
 
     responses = []
     for chunk in chunks:
@@ -149,18 +161,34 @@ def summarize(
             },
         ]
 
-        response = openai.ChatCompletion.create(
-            model=model, messages=messages, max_tokens=1000, temperature=0.2
-        )
-        ai_output = response["choices"][0]["message"]["content"]
+        # communicate with the API
+        logging.info("Sending prompt to OpenAI API...")
+        try:
+            response = openai.ChatCompletion.create(
+                model=model, messages=messages, max_tokens=1000, temperature=0.2
+            )
+        except Exception as e:
+            raise SummarizationError(f"Could not generate summary. Error: {e}") from e
+        logging.info("Received response from OpenAI API.")
+        try:
+            ai_output = response["choices"][0]["message"]["content"]
+        except Exception as e:
+            raise SummarizationError(f"Could not parse response. Error: {e}") from e
+        logging.info("Parsed response from OpenAI API.")
         responses.append(ai_output)
+        logging.info("Appended response to responses list.")
+
     summary_path = f"./summaries/{filename}.txt"
     # save it to a file
     if save_summary == True:
-        with open(summary_path, "w") as f:
-            for response in responses:
-                f.write(response + "\n")
+        try:
+            with open(summary_path, "w") as f:
+                for response in responses:
+                    f.write(response + "\n")
+                logging.info(f"Saved summary to {summary_path}.")
+        except Exception as e:
+            raise SummarizationError(
+                f"Could not save summary to file. Error: {e}"
+            ) from e
 
     return summary_path
-
-
