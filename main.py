@@ -1,9 +1,12 @@
-"""We will have several segments:
-- Video to Audio
-- Audio to Text using whisper
-    - Count tokens
-- Text to summary using ChatGPT API
-- Summary to Notion using Notion API
+"""
+Create a Class that takes in a video file and creates a Notion page out of it
+Steps:
+1. Convert video to audio
+2. Transcribe audio to text
+3. Summarize text
+4. Create Notion page
+
+You dont need to go through all the steps, you can just call the function that you want to use
 """
 import logging
 from datetime import datetime
@@ -24,8 +27,31 @@ logging.basicConfig(level=logging.INFO)
 
 
 class NotesAssistant:
+    """Creates a Notion page out of a video file, using the following steps:
+
+        1. Convert video to audio (using MoviePy library)
+        2. Transcribe audio to text (using whisper library)
+        3. Summarize text (using OpenAI API)
+        4. Create Notion page (using Notion API)
+    Usage: NotesAssistant(video_path="./videos/test_video.mp4")
+
+    Methods:
+        video_to_audio: Converts a video file to an audio file
+        audio_to_text: Creates a transcript out of an audio file
+        text_to_summary: Creates a summary out of a transcript
+        summary_to_notion: Creates a Notion page out of a summary
+
+    Notes:
+    You dont need to go through all the steps, you can just call the function that you want to use
+
+    Attributes:
+        video_path: Path to the video file
+        audio_file_path: Path to the audio file
+        transcript_path: Path to the transcript file
+        summary_path: Path to the summary file
+    """
+
     def __init__(self, video_path: bool = None):
-        """Initializes the NotesAssistant class"""
         self.video_path = video_path
 
     def video_to_audio(
