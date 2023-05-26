@@ -1,11 +1,16 @@
 """
 This script uses the OpenAI API to generate a summary of a transcript.
-Used for transcripts larger than 1500-2000 tokens, which is the limit of the GTP-3 API.
+If the transcript is larger than 1500-2000 tokens, which is the limit of 
+the GTP-3 API, seds multiple requests.
 """
 import openai
 from config import settings
 import pandas as pd
 import tiktoken
+import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 openai.organization = settings.openai_organization
@@ -38,11 +43,13 @@ def num_tokens_from_messages(messages: str, model: str = "gpt-3.5-turbo-0301") -
 
 
 def read_transcript(transcript_path: str) -> str:
+    """Reads a transcript from a file."""
     with open(transcript_path, "r", encoding="utf-8") as f:
         return f.read()
 
 
 def split_transcript(transcript: str, max_tokens: int) -> list[str]:
+    """Splits a transcript into chunks of max_tokens."""
     words = transcript.split(" ")
     chunks = []
     current_chunk = []
@@ -61,12 +68,24 @@ def split_transcript(transcript: str, max_tokens: int) -> list[str]:
 
 def summarize(
     transcript_path: str, model: str = "gpt-3.5-turbo-0301", save_summary: bool = True
-) -> None:
-    print(f"Using model {model}.")
+) -> str:
+    """Summarizes a transcript using the OpenAI API. Returns the summary as a string.
+    
+    Args:
+        transcript_path (str): The path to the transcript file.
+        model (str, optional): The model to use. Defaults to "gpt-3.5-turbo-0301".
+        save_summary (bool, optional): Whether to save the summary to a file. Defaults to True.
+
+    Returns:
+        path (str): The path to the summary file.
+
+    
+    """
     transcript = read_transcript(transcript_path)
-    print(
-        f"The model is these {num_tokens_from_messages(transcript, model)} tokens long."
-    )
+    filename, _ = os.path.splitext(os.path.basename(transcript_path))
+    logging.info(f"Using model {model}. the file {filename}")
+    logging.info(f"The model is these {num_tokens_from_messages(transcript, model)} tokens long.")
+    
     chunks = split_transcript(
         transcript, 1500
     )  # Adjust the token limit based on your messages
@@ -135,17 +154,13 @@ def summarize(
         )
         ai_output = response["choices"][0]["message"]["content"]
         responses.append(ai_output)
-
+    summary_path = f"./summaries/{filename}.txt"
     # save it to a file
     if save_summary == True:
-        with open("./data_utilization.json", "w") as f:
+        with open(summary_path, "w") as f:
             for response in responses:
                 f.write(response + "\n")
 
-    return responses
+    return summary_path
 
 
-if __name__ == "__main__":
-    model = "gpt-3.5-turbo-0301"
-    transcript_path = "./transcripts/data_utilization.txt"
-    summarize(transcript_path, model, save_summary=True)
