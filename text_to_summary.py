@@ -111,7 +111,7 @@ def summarize(
         Key "main_points" - add an array of the main points. Limit each item to 80 words, and limit the list to 10 items.
         Key "action_items:" - add an array of action items. Limit each item to 50 words, and limit the list to 5 items.
         Key "follow_up:" - add an array of follow-up questions. Limit each item to 80 words, and limit the list to 5 items.
-        Key "stories:" - add an array of an stories, examples, or cited works found in the transcript. Limit each item to 1050 words, and limit the list to 5 items.
+        Key "stories:" - add an array of an stories, examples, or cited works found in the transcript. Limit each item to 150 words, and limit the list to 5 items.
         Key "arguments:" - add an array of potential arguments against the transcript. Limit each item to 50 words, and limit the list to 5 items.
         Key "related_topics:" - add an array of topics related to the transcript. Limit each item to 50 words, and limit the list to 5 items.
         Key "sentiment" - add a sentiment analysis
