@@ -108,8 +108,3 @@ class NotionPageBuilder:
                 ]
             },
         }
-
-
-# Test
-notion_page_builder = NotionPageBuilder(filename)
-notion_page_builder.create_page()

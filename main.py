@@ -10,7 +10,17 @@ from datetime import datetime
 from video_to_audio import convert_video_to_audio
 from transcribe import transcribe_audio
 from text_to_summary import summarize
+from summary_to_notion import NotionPageBuilder
 import os
+
+
+class NotionPageError(Exception):
+    """Raised when Notion page cannot be created"""
+
+    pass
+
+
+logging.basicConfig(level=logging.INFO)
 
 
 class NotesAssistant:
@@ -66,8 +76,20 @@ class NotesAssistant:
         self.summary_path = summary_path
         return summary_path
 
-    def summary_to_notion(self):
-        pass
+    def summary_to_notion(self, summary: None):
+        """Creates a Notion page out of a summary using Notion API"""
+        if summary is None:
+            summary = self.summary_path
+        try:
+            page = NotionPageBuilder(summary)
+        except Exception as e:
+            raise NotionPageError(f"Could not create Notion page. Error: {e}") from e
+
+        try:
+            page.create_page()
+        except Exception as e:
+            raise NotionPageError(f"Could not create Notion page. Error: {e}") from e
+        logging.info("Notion page created successfully")
 
 
 def main():

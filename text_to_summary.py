@@ -9,6 +9,7 @@ import pandas as pd
 import tiktoken
 import os
 import logging
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -90,9 +91,9 @@ def summarize(
     transcript = read_transcript(transcript_path)
     filename, _ = os.path.splitext(os.path.basename(transcript_path))
     logging.info(f"Using model {model}. the file {filename}")
-    logging.info(
-        f"The model is these {num_tokens_from_messages(transcript, model)} tokens long."
-    )
+    # logging.info(
+    #     f"The model is these {num_tokens_from_messages(transcript, model)} tokens long."
+    # )
     try:
         chunks = split_transcript(
             transcript, 1500
@@ -163,22 +164,35 @@ def summarize(
 
         # communicate with the API
         logging.info("Sending prompt to OpenAI API...")
-        try:
-            response = openai.ChatCompletion.create(
-                model=model, messages=messages, max_tokens=1000, temperature=0.2
-            )
-        except Exception as e:
-            raise SummarizationError(f"Could not generate summary. Error: {e}") from e
+        for attempt in range(3):
+            try:
+                response = openai.ChatCompletion.create(
+                    model=model, messages=messages, max_tokens=1000, temperature=0.2
+                )
+                break
+            except Exception as e:
+                if attempt == 2:
+                    raise SummarizationError(
+                        f"Could not send prompt to OpenAI API. Error: {e}"
+                    ) from e
+                else:
+                    logging.warning(
+                        f"Could not send prompt to OpenAI API. Error: {e}. Retrying..."
+                    )
+                    time.sleep(5)
+
         logging.info("Received response from OpenAI API.")
+
         try:
             ai_output = response["choices"][0]["message"]["content"]
         except Exception as e:
             raise SummarizationError(f"Could not parse response. Error: {e}") from e
         logging.info("Parsed response from OpenAI API.")
+
         responses.append(ai_output)
         logging.info("Appended response to responses list.")
 
-    summary_path = f"./summaries/{filename}.txt"
+    summary_path = f"./summaries/{filename}.json"
     # save it to a file
     if save_summary == True:
         try:
