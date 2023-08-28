@@ -2,6 +2,7 @@
 ## Description
 This application automates the tasks of taking notes from meetings. It can even be used to summarize any type of video
 It takes a video file and finishes with a summary in your notion.
+![AI Assistant](./assets/AI%20assistant.jpeg)
 
 ### 1. Video to Audio
 Using the MoviePy library we take our ".mp4" file and extract its audio
