@@ -31,6 +31,3 @@ moviepy
 ## Creator
 José Sabater
 
-## Acknowledgements
-Inspiration from: https://www.youtube.com/watch?v=hCEdm9LGBb0&list=LL&index=13&t=20s
-
