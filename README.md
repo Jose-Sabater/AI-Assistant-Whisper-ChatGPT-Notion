@@ -63,6 +63,37 @@ From your terminal / Shell
 python flask_app.py
 ```
 
+## Example
+See [Notion Page](https://great-xenon-74b.notion.site/fireship-neuralink-693da8c633b34bb9b971eef50168237c?pvs=4)
+
+
+Logs:
+```
+MoviePy - Writing audio in ./audio_files/neuralink.mp3
+INFO:root:Audio extracted successfully, file saved to ./audio_files/neuralink.mp3
+INFO:root:Initializing Transcription with device: cuda
+MoviePy - Done.
+INFO:root:Model loaded, is multiligual True and has
+        240,582,912 parameters.
+INFO:root:Transcription completed successfully
+INFO:root:Transcript saved to ./transcripts/neuralink.txt
+INFO:root:diarization saved to ./transcripts/neuralink_diarization.txt
+INFO:root:Transcription completed successfully
+INFO:root:Summarizing: neuralink with model: gpt-3.5-turbo-0125.
+INFO:root:Sending prompt to OpenAI API...
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Received response from OpenAI API.
+INFO:root:Total token use: CompletionUsage(completion_tokens=563, prompt_tokens=1549, total_tokens=2112)
+INFO:root:Parsed response from OpenAI API.
+INFO:root:Appended response to responses list.
+INFO:root:Saved summary to ./summaries/neuralink.json.
+INFO:root:PageBuilder initialized.
+INFO:root:Creating Notion page.
+INFO:httpx:HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+INFO:root:Page created successfully.
+```
+
+
 
 ## Stack
 python  
