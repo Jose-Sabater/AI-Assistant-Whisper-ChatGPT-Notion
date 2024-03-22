@@ -1,0 +1,41 @@
+# Neuralink's Brain-Chip Success: A Game-Changer in Human Abilities
+
+## Summary
+- The transcript discusses the success of Neuralink's brain-chip implant in a paralyzed individual, enabling telekinetic-like abilities. It explains the technology, potential applications, and addresses concerns. The future implications of brain-chips and robotics convergence are highlighted.
+
+## Action Items
+- Explore the possibility of participating in Neuralink's clinical trials for the brain-chip.
+- Learn more about the technology behind brain-computer interfaces and its potential applications.
+- Stay updated on advancements in brain-chip technology and its integration with robotics.
+- Consider the ethical implications and limitations of brain-chip technology.
+- Discuss the potential benefits and risks of brain-chips with healthcare professionals.
+
+## Follow Up
+- How can brain-chip technology be further improved to enhance its functionality?
+- What are the long-term effects of having a brain-chip implanted?
+- How can society ensure the ethical use of brain-chip technology?
+- What are the potential societal impacts of widespread adoption of brain-chips?
+- How can individuals with disabilities benefit from advancements in brain-chip technology?
+
+## Arguments
+- Privacy concerns may arise regarding the security of data transmitted wirelessly by the brain-chip.
+- Ethical debates may question the implications of manipulating brain waves for controlling external devices.
+- Potential risks of cyber attacks targeting brain-chip technology could pose serious threats to users.
+- The long-term health effects of having a brain-chip implanted may not be fully understood.
+- Societal acceptance and integration of brain-chip technology may face resistance and stigmatization.
+
+## Related Topics
+- Brain-Computer Interfaces
+- Neurotechnology
+- Artificial Intelligence and Robotics
+- Medical Ethics in Technology
+- Assistive Technologies for Disabilities
+
+## Sentiment
+- positive
+
+## Date
+- 2024-03-22
+
+## Transcript
+-  A few months ago, Elon Musk announced Neuralink had implanted their first brainship into a real-life human. But in the weeks that followed, we heard nothing but crickets. Based on the prior testing results with monkeys, doctors, scientists, and Elon haters all over the world feared the worst. They assumed the encephalon likely exploded and patient zero did not survive. Finally, yesterday we learned the truth, that Neuralink install was a success, and the results are absolutely mind-blowing. It is March 21st, 2024, and you're watching the Code Report. This is Nolan Arbaugh. He's a 29-year-old who was paralyzed from the shoulder down in a diving accident. That's not the best car to be dealt in life, but over the last few weeks, he's gained telekinetic-like abilities that seem impossible at first glance, like here he's controlling a mouse cursor to play games like chess and Civ 6, using nothing but his thoughts. There's no eye tracking or sensors other than the chip in his brain. In today's video, we'll find out exactly how this crazy technology works and make some predictions about where things are going in the future. But first, I think humanity owes this guy a huge amount of respect and appreciation. The average person thinks they're brave for being an early adopter of the Cybertruck, but it takes real balls of stainless steel to order the Foundation Series Neuralink. What's crazy is that the chip itself is not installed by a human surgeon, but rather a surgical robot. After drilling a hole into your cranium, it implants a bunch of tiny threads that are finer than a human hair. It uses a tiny needle like a sewing machine to weave these threads into your brain. Each thread contains high-density electrodes, which are capable of detecting electrical activity, also known as brain waves. The N1 chip has 1,024 electrodes, distributed across 64 threads, which means you have 16 electrodes per thread. To put that in perspective, a typical electroencephalogram will have around 20 sensors, and they typically max out around 256 electrodes. In addition, they're on the outside of your skull, which means you're more likely to get interference before that signal reaches the electrode. The only real advantage is that you don't have to drill a hole into your skull. The N1 transmits data wirelessly, and is powered by a small lithium-ion battery, and that battery is charged wirelessly from the outside via an inductive charger. But the big question here is, how is this guy actually moving a mouse with his thoughts? Well, in order to understand that, we need to learn a little bit about brain waves. When you're asleep, your brain emits low-frequency delta waves around 2 hertz. When you wake up and become a little more alert, they increase their frequency to alpha waves at around 10 hertz. And then finally, when you become highly focused, like when solving a coding problem or playing chess, they become gamma waves at around 35 hertz. And that's what we're most interested in measuring, because we can recognize certain wave patterns, just like a sound wave, which can identify a distinct thought in your brain. They didn't provide a ton of detail in the Neuralink video, but he might have a thought, like move my right arm, that creates a specific type of electrical signal in his brain. The chip itself can then pick up on that, which triggers an action to move the mouse to the right. But that doesn't happen magically right after the surgery. There's a brain-computer interface where the end user needs to practice a bunch of movements because everybody's brain waves are different, and it needs to learn which thoughts correspond to which movements. Now, if you have working arms and legs, you might not be all that excited. But for many, this technology could be life-changing, especially when integrated with futuristic technologies. Like today we have wheelchairs, but in the not-so-distant future, they could be replaced by mech suits that are entirely controlled by the person's brain. I know that sounds crazy, but the field of robotics is also popping off right now. Figure 1 has incredible human-like dexterity, and Nvidia just announced their own humanoid robots, and it's only a matter of time before there's an Apple Robot Pro. When brain-chips and robotics converge in the near future, human disabilities may be far less restrictive, and that's a big win for humanity. Now, brain-chips do have their skeptics for obvious reasons, but luckily, the data only flows one way. You don't have to worry about getting KFC advertisements injected into your dreams, and they won't be able to turn off important bodily functions if you don't pay your monthly subscription. Also, they can't really identify highly complex thoughts, which means there's no need to worry about being thrown in jail for wrongthink, while the NSA monitors your thoughts. And most importantly, there won't be an API for JavaScript developers to build apps on it. Now finally, the good news is that you can be an early adopter as well. Clinical trials are open for the Neural Link Prime study, where you can get your Founders Edition brain-chip. Make sure to sign up with the link on screen. Full disclosure, this video is not sponsored, and I don't get paid if you don't survive the trial, so come with me if you want to not die. This has been The Code Report, thanks for watching, and I will see you in the next one.

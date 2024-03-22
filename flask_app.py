@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from werkzeug.utils import secure_filename
 import os
-from main import NotesAssistant
+from assistant import NotesAssistant
 
 app = Flask(__name__)
 
@@ -32,10 +32,7 @@ def upload_file():
             notes_assistant = NotesAssistant(
                 os.path.join(app.config["UPLOAD_FOLDER"], filename)
             )
-            notes_assistant.video_to_audio()
-            notes_assistant.audio_to_text()
-            notes_assistant.text_to_summary()
-            notes_assistant.summary_to_notion()
+            notes_assistant.make_notes()
             return "Notion page created successfully!"
     return """
     <!doctype html>
