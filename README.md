@@ -1,45 +1,49 @@
 # AI-Assistant
 ## Description
-This application automates the tasks of taking notes from videos, audios, meetings. It can even be used to summarize any type of video
-It takes a video file and finishes with a summary in your notion. You can also start on any of the other steps (audio or transcript).  
-Runs on GPU or CPU
+The AI-Assistant is a versatile tool designed to streamline the process of note-taking from various media formats such as videos, audios, and meetings. It simplifies the creation of concise summaries, making it invaluable for capturing key points and insights. Whether starting from a video file, an audio clip, or a transcript, the application supports both GPU and CPU environments for efficient processing.  
 ![AI Assistant](./assets/AI%20assistant.jpeg)
 
+## Workflow
+
 ### 1. Video to Audio
-Using the MoviePy library we take our ".mp4" file and extract its audio
+- Tool: MoviePy library.
+- Function: Converts ".mp4" files into audio for further processing.
 
 ---
 ### 2. Audio to text
-In the transcription step with use Whisper, OpenAI's open source transcription models. It takes the path to an audio file and returns its transcription.  By default uses small model. See available models here: https://github.com/openai/whisper   
+- Tool: Whisper, OpenAI's open-source transcription model, and pyannote for diarization.
+- Function: Transcribes audio files, offering support for multiple languages and speaker identification.
+- Models: Default to the small model, with options to switch as per the user's requirement. [Available Models](https://github.com/openai/whisper)
 
 Diarization(speaker identification) is available. This is built using pyannote, and some custom utils from https://github.com/Jose-Sabater/whisper-pyannote
 
 ---
 ### 3. Text to Summary
-Here we use Large Language Models, to summarize our text. Generating a summary, main bullet points , follow up points and other discussion topics. In the end also a sentiment analysis. This project uses the [JSON mode](https://platform.openai.com/docs/guides/text-generation/json-mode), verify that the models you select have it.  
-For now this step is done using OpenAI, but will include availability to more models
+- Tool: Large Language Models.
+- Function: Generates comprehensive summaries including main points, follow-up queries, discussion topics, and sentiment analysis using the [JSON mode](https://platform.openai.com/docs/guides/text-generation/json-mode).
+- Expansion: Future updates will include support for additional models.
 
 ---
 ### 4. Summary to Notes
-We create blocks according to everything we want to extract from the transcript:  
-Summary, action items, follow up, arguments, related topics, sentiment, date  
+- Function: Converts summaries into organized blocks, capturing summaries, action items, follow-ups, arguments, related topics, sentiments, and dates.
+- Formats: Supports output in Notion for seamless integration into workflows or Markdown for local documentation.  
 
-2 Options Notion or Markdown  
-#### Notion
-Many people use notion as their note taking application, and this app is just a showcase of how to utilize their API. This step is rather simple and probably could be done with any other markdown language application that offers an API endpoint. 
-#### Markdown
-Generates a local markdown page with the found insights.
+**Notion Integration**
+Illustrates how to leverage the Notion API for note integration, showcasing the potential for adaptation to other Markdown-supported platforms.  
+
+**Markdown Output**
+Generates a local Markdown document encompassing all insights derived from the analysis.
 
 
 ## Configuration
-The app uses environment variables that contain our API keys and the notion path to our pages. You will need to create this .env or any other method to protect your secrets.  
-Everything is loaded automatically through the [config](./config.py) file, so be sure to have all the required keys.
+To protect your API keys and Notion paths, it's recommended to utilize environment variables, stored in a .env file or a similar secure method. The application's configuration settings are automatically loaded from the config.py file, ensuring all necessary credentials are in place.
 
 ## Usage
+To begin, ensure all dependencies are installed:
 ```shell
 pip install -r requirements.txt
 ```
-To get started you can have a mp4, an audio file or a transcript
+The application can process mp4 files, audio, or text transcripts. Here are some ways to use AI-Assistant:
 #### *Python*  
 ```python
 import logging
@@ -47,8 +51,10 @@ from assistant import NotesAssistant
 
 logging.basicConfig(level=logging.INFO)
 
-assistant = NotesAssistant("./transcripts/neuralink.txt", "Markdown") # Point it to your media
-assistant.make_notes("fireship-neuralink") # Performs all needed steps until notes are ready
+# Specify your media file and desired output format
+assistant = NotesAssistant("./transcripts/neuralink.txt", "Markdown")
+# Execute the note-making process
+assistant.make_notes("fireship-neuralink")
 ```
 
 #### *CLI*
@@ -64,10 +70,11 @@ python flask_app.py
 ```
 
 ## Example
-See [Notion Page](https://great-xenon-74b.notion.site/fireship-neuralink-693da8c633b34bb9b971eef50168237c?pvs=4)
+View a generated [Notion Page](https://great-xenon-74b.notion.site/fireship-neuralink-693da8c633b34bb9b971eef50168237c?pvs=4)
 
 
-Logs:
+## Logs:
+Sample application logs to illustrate the process flow:
 ```
 MoviePy - Writing audio in ./audio_files/neuralink.mp3
 INFO:root:Audio extracted successfully, file saved to ./audio_files/neuralink.mp3
@@ -92,8 +99,6 @@ INFO:root:Creating Notion page.
 INFO:httpx:HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
 INFO:root:Page created successfully.
 ```
-
-
 
 ## Stack
 python  
