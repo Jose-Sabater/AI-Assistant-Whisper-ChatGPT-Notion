@@ -1,7 +1,7 @@
 # AI-Assistant
 ## Description
 The AI-Assistant is a versatile tool designed to streamline the process of note-taking from various media formats such as videos, audios, and meetings. It simplifies the creation of concise summaries, making it invaluable for capturing key points and insights. Whether starting from a video file, an audio clip, or a transcript, the application supports both GPU and CPU environments for efficient processing.  
-![AI Assistant](./assets/AI%20assistant.jpeg)
+![AI Assistant](./assets/AI%20assistant.jpg)
 
 ## Workflow
 
